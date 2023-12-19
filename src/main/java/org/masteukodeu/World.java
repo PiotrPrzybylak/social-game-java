@@ -7,7 +7,8 @@ import java.util.Random;
 public enum World {
     INSTANCE;
 
-    public List<Human> population = new ArrayList<>();
-    public Random random = new Random();
+    public final List<Human> population = new ArrayList<>();
+    public final Random random = new Random();
 
+    public int multiplicationFactor = 50;
 }

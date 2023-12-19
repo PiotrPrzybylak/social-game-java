@@ -1,7 +1,5 @@
 package org.masteukodeu;
 
-import java.util.ArrayList;
-
 public class Human {
     private int ageInDays;
     private boolean alive = true;
@@ -17,7 +15,7 @@ public class Human {
             return;
         }
 
-        if (ageInYears() >= 18 &&  ageInYears() < 60 && hasBirthday() && World.INSTANCE.random.nextInt(50) == 0) {
+        if (ageInYears() >= 18 &&  ageInYears() < 60 && hasBirthday() && World.INSTANCE.random.nextInt(World.INSTANCE.multiplicationFactor) == 0) {
             bud();
         }
 

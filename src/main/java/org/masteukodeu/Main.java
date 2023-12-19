@@ -2,10 +2,15 @@ package org.masteukodeu;
 
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.print("Hello and welcome!");
+        System.out.println("Hello and welcome!");
+
+        System.out.println("Choose multiplication factor:");
+        Scanner scanner = new Scanner(System.in);
+        World.INSTANCE.multiplicationFactor = scanner.nextInt();
 
         Human adam = new Human();
         System.out.println(adam);
