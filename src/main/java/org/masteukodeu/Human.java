@@ -25,15 +25,11 @@ public class Human {
 
     private void die() {
         alive = false;
-        ArrayList<Human> population = new ArrayList<>(World.INSTANCE.population);
-        population.remove(this);
-        World.INSTANCE.population = population;
+        World.INSTANCE.population.remove(this);
     }
 
     private void bud() {
-        ArrayList<Human> population = new ArrayList<>(World.INSTANCE.population);
-        population.add(new Human());
-        World.INSTANCE.population = population;
+        World.INSTANCE.population.add(new Human());
     }
 
     private boolean hasBirthday() {

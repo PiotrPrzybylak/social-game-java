@@ -1,6 +1,8 @@
 package org.masteukodeu;
 
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         System.out.print("Hello and welcome!");
@@ -10,7 +12,7 @@ public class Main {
         World.INSTANCE.population.add(adam);
         for (int i = 0; i < 1000; i++) {
             for (int j = 0; j < 365; j++) {
-                for (Human human : World.INSTANCE.population) {
+                for (Human human : new ArrayList<>(World.INSTANCE.population)) {
                     human.live();
                 }
             }
