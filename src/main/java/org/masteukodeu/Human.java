@@ -13,14 +13,21 @@ public class Human {
         ageInDays++;
 
         if (ageInYears() >= 100) {
-            alive = false;
+            die();
             return;
         }
 
-        if (ageInYears() >= 18 &&  ageInYears() < 60 && hasBirthday()) {
+        if (ageInYears() >= 18 &&  ageInYears() < 60 && hasBirthday() && World.INSTANCE.random.nextInt(50) == 0) {
             bud();
         }
 
+    }
+
+    private void die() {
+        alive = false;
+        ArrayList<Human> population = new ArrayList<>(World.INSTANCE.population);
+        population.remove(this);
+        World.INSTANCE.population = population;
     }
 
     private void bud() {
