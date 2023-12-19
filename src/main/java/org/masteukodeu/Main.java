@@ -17,8 +17,13 @@ public class Main {
                 }
             }
             System.out.print("Year " + i + " : ");
-            System.out.println(World.INSTANCE.population.size());
-//            System.out.println(World.INSTANCE.population);
+            int population = World.INSTANCE.population.size();
+            System.out.println(population);
+            if (population == 0 || population > 1000) {
+                System.out.println("Game over!");
+                System.out.println("Your civilization lasted " + i + " years");
+                return;
+            }
         }
     }
 }
