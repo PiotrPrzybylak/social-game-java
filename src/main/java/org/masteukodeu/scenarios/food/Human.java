@@ -2,7 +2,7 @@ package org.masteukodeu.scenarios.food;
 
 public class Human {
 
-    private final Place place;
+    private Place place;
     boolean alive = true;
     int foodInBellyInKCal = 3000;
 
@@ -19,6 +19,17 @@ public class Human {
         foodInBellyInKCal -= 1000;
         if (foodInBellyInKCal < 0) {
             alive = false;
+            return;
+        }
+
+        move();
+    }
+
+    private void move() {
+        int index = World.INSTANCE.places.indexOf(place);
+        index += Direction.randomDirection().delta;
+        if (index >= 0 && index < World.INSTANCE.places.size()) {
+            place = World.INSTANCE.places.get(index);
         }
     }
 
@@ -30,7 +41,8 @@ public class Human {
     @Override
     public String toString() {
         return "Human{" +
-                "alive=" + alive +
+                "place=" + place +
+                ", alive=" + alive +
                 ", foodInBellyInKCal=" + foodInBellyInKCal +
                 '}';
     }
