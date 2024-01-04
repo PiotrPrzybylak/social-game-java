@@ -13,6 +13,7 @@ public class Main {
             }
             human.live();
             System.out.println(human);
+            System.out.println(World.INSTANCE);
         }
     }
 }

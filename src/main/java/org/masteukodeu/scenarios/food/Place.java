@@ -4,6 +4,8 @@ public class Place {
 
     int foodInKCal;
 
+    Human human;
+
     public void growFood() {
         if (foodInKCal < 5000) {
             if (World.checkWithProbability(25)) {
@@ -18,11 +20,18 @@ public class Place {
         return harvesterFood;
     }
 
+    public void setHuman(Human human) {
+        this.human = human;
+    }
+
     @Override
     public String toString() {
-        return "Place{" +
-                "index=" + World.INSTANCE.places.indexOf(this) +
-                ", foodInKCal=" + foodInKCal +
-                '}';
+
+        String human = this.human != null ? " *" : "";
+        return "[" +
+                World.INSTANCE.places.indexOf(this) +
+                "=" + foodInKCal/1000 +
+                human +
+                "]";
     }
 }

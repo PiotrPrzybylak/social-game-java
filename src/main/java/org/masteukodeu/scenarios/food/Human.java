@@ -29,7 +29,9 @@ public class Human {
         int index = World.INSTANCE.places.indexOf(place);
         index += Direction.randomDirection().delta;
         if (index >= 0 && index < World.INSTANCE.places.size()) {
+            place.setHuman(null);
             place = World.INSTANCE.places.get(index);
+            place.setHuman(this);
         }
     }
 

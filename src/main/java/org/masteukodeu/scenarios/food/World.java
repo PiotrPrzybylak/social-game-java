@@ -14,4 +14,8 @@ public enum World {
         return INSTANCE.random.nextInt(100) < probabilityInPercents;
     }
 
+    @Override
+    public String toString() {
+        return "{" + places + '}';
+    }
 }
